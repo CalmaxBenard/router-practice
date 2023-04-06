@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './NavigationBar.module.css';
 
 const NavigationBar = () => {
@@ -6,10 +6,24 @@ const NavigationBar = () => {
         <nav>
             <ul className={styles.list}>
                 <li>
-                    <Link to='/'>Home</Link>
+                    <NavLink 
+                    to='/'
+                    className={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                    }
+                    >
+                        Home
+                    </NavLink>
                 </li>
                 <li>
-                    <Link to='/products'>Products</Link>
+                <NavLink 
+                    to='products'
+                    className={({ isActive }) =>
+                        isActive ? styles.active : undefined
+                    }
+                    >
+                        Products
+                    </NavLink>
                 </li>
             </ul>
         </nav>
